@@ -1,6 +1,6 @@
 // import {useState,} from 'react';
 import './App.css'
-import HomeHookTwo from './componentes/Hooks2';
+import HomeHookTwo from './componentes/Renderização';
 //import HomeProps from './componentes/Props';
 //import HomeHooks from './componentes/Hooks';
 
