@@ -1,47 +1,25 @@
-// import {useState,} from 'react';
-import './App.css'
-import HomeHookTwo from './componentes/Renderização';
-//import HomeProps from './componentes/Props';
-//import HomeHooks from './componentes/Hooks';
-
-/*
-const App = () => {
-  return (
-    <HomeProps
-    title='Componente Home'
-    description='Este é um componente Home que recebe props'
-    />
-  );
-}
-*/
-
-
-/*
-function App(){
-  const[valor, setValor] = useState(0);
-  function handleClick(){
-    setValor(valor + 1);
-  }
-  return(
-    <div>
-      <h1>App</h1>
-      <p>O valor é: {valor}</p>
-      <button onClick={handleClick}>Adicionar 1</button>
-
-    </div>
-  );
-}
-*/
+import './App.css';
+import Home from './assets/paginas/home/Home';
+import Navbar from './componentes/navbar/NavBar';
+import Footer from './componentes/footer/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './assets/paginas/login/Login';
 
 function App() {
- 
   return (
     <>
-      <HomeHookTwo/>
+    <BrowserRouter>
+        <Navbar />
+          <div className='min-h-[80vh]'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
     </>
-  );
+);
 }
-
-
-
 export default App;
