@@ -1,4 +1,4 @@
-import homeLogo from '../../pixil-draw.gif'
+import homeLogo from '../../assets/pixil-draw.gif'
 import './Home.css';
 
 
