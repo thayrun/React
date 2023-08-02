@@ -9,7 +9,7 @@ function ModalPostagem() {
   return (
     <>
       <Popup 
-      trigger={<button className='rounded bg-gradient-to-r from-stone-800 from-2% via-blue-800 via-80% to-stone-800 to-100% uppercase text-white py-2 px-5 mt-3'>Nova postagem</button>} modal>
+      trigger={<button className='hover:text-sky-200 rounded border-4 border-stone-700/50 bg-gradient-to-r from-blue-950 from-2% via-stone-950 via-50% to-blue-950 to-2% hover:transition duration-300 transition-transform transform hover:scale-110 text-white py-3 px-3 mt-2'>NOVA POSTAGEM</button>} modal>
         <div>
           <FormularioPostagem />
         </div>
