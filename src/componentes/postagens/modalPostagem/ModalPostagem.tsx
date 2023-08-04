@@ -1,9 +1,23 @@
 import FormularioPostagem from '../formularioPostagem/FormularioPostagem';
-
+import './ModalPostagem.css';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
 
-import './ModalPostagem.css'
+/* 
+O arquivo reactjs-popup/dist/index.css é um arquivo de estilo pré-compilado que faz parte da biblioteca reactjs-popup. 
+Nesse arquivo, estão definidos todos os estilos necessários para o correto funcionamento dos modais (popups) fornecidos por essa biblioteca.
+
+Quando importamos esse arquivo 'reactjs-popup/dist/index.css';, estamos dizendo ao bundler(Webpack) para incluir esses estilos na compilação final do seu aplicativo. 
+Assim, os estilos serão aplicados aos componentes de modal que você utilizar no código, garantindo que eles tenham a aparência e o comportamento esperados.
+
+O que é Bundler mesmo?
+Um "bundler" é uma ferramenta de construção de projetos utilizada no desenvolvimento de aplicações web modernas. 
+Sua principal função é combinar, processar e otimizar diversos arquivos de código-fonte, como JavaScript, CSS, imagens e outros recursos, em um único ou vários pacotes prontos para uso em um ambiente de produção.
+*/
+
+
+
+
 
 function ModalPostagem() {
   return (

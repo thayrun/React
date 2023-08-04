@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
+import { toastAlert } from '../../../utils/toastAlert';
 
 function FormularioTema() {
   const [tema, setTema] = useState<Tema>({} as Tema);
@@ -48,15 +49,15 @@ function FormularioTema() {
           }
         })
 
-        alert(`Seu TEMA foi atualizado para ${tema.descricao} com sucesso!`);
+        toastAlert(`Seu TEMA foi atualizado para ${tema.descricao} com sucesso!`, 'sucesso');
         retornar()
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('Opa! O seu token expirou, vai precisar logar de novo')
+          toastAlert('Opa! O seu token expirou, vai precisar logar de novo', 'info')
           handleLogout()
         } else {
-          alert('Oh noes! Parece que ocorreu um erro ao atualizar o Tema')
+          toastAlert('Oh noes! Parece que ocorreu um erro ao atualizar o Tema', 'erro')
         }
 
       }
@@ -69,14 +70,14 @@ function FormularioTema() {
           }
         })
 
-        alert(`Eba! O Tema: ${tema.descricao} foi adicionado com sucesso!`)
+        toastAlert(`Eba! O Tema: ${tema.descricao} foi adicionado com sucesso!`, 'sucesso')
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('Opa! O seu token expirou, vai precisar logar de novo')
+          toastAlert('Opa! O seu token expirou, vai precisar logar de novo', 'info')
           handleLogout()
         } else {
-          alert('Ih! Parece que ocorreu um erro ao cadastrado o Tema.')
+          toastAlert('Ih! Parece que ocorreu um erro ao cadastrado o Tema.', 'erro')
         }
       }
     }
@@ -90,7 +91,7 @@ function FormularioTema() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Heey! Você precisa estar logado!');
+      toastAlert('Heey! Você precisa estar logado!', 'info');
       navigate('/login');
     }
   }, [token]);

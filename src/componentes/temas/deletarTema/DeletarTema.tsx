@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Tema from '../../../models/Tema'
 import { buscar, deletar } from '../../../services/Service'
+import { toastAlert } from '../../../utils/toastAlert'
 
 function DeletarTema() {
     const [tema, setTema] = useState<Tema>({} as Tema)
@@ -23,7 +24,7 @@ function DeletarTema() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Ouu, meu amigue! O token expirou, favor logar novamente!')
+                toastAlert('Ouu, meu amigue! O token expirou, favor logar novamente!', 'info')
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Ops! Parece que você ainda não logou sua conta!')
+            toastAlert('Ops! Parece que você ainda não logou sua conta!', 'info')
             navigate('/login')
         }
     }, [token])
@@ -54,10 +55,10 @@ function DeletarTema() {
                 }
             })
 
-            alert('Tema: ' + tema.descricao + 'apagado com sucesso!')
+            toastAlert('Tema: ' + tema.descricao + ' apagado com sucesso!', 'sucesso')
 
         } catch (error) {
-            alert('Oops.. Parece que ocorreu um erro ao apagar esse Tema!')
+            toastAlert('Oops.. Parece que ocorreu um erro ao apagar esse Tema!', 'erro')
         }
 
         retornar()
@@ -69,7 +70,7 @@ function DeletarTema() {
             <p className='text-center font-semibold mb-4'>Eita! Tem certeza que deseja apagar o TEMA: {tema.descricao}?</p>
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-cyan-700 text-white font-bold text-2xl'>Tema</header>
+                <header className='py-2 px-6 bg-stone-700 text-white font-bold text-2xl'>Tema</header>
                 <p className='p-8 text-3xl bg-slate-100 h-full'>{tema.descricao}</p>
                 <div className="flex">
                     <button className='text-slate-100 bg-red-500 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
