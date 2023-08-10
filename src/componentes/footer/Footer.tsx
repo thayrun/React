@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthContext'
 function Footer() {
 
 
-  const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario } = useContext(AuthContext)
 
   let footerComponent
 
