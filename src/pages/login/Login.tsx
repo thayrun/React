@@ -38,9 +38,9 @@ function login(e: ChangeEvent<HTMLFormElement>) {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-5xl bg-gradient-to-r from-slate-700 from-10% via-cyan-500 via-30% to-sky-800 to-90% bg-clip-text text-transparent">Entrar</h2>
+      <div className="flex justify-center items-center h-screen place-items-center font-bold ">
+        <form className="flex justify-center items-center flex-col w-1/2 gap-4 container-login" onSubmit={login}>
+          <h2 className="font-handjet text-7xl animated-text-color bg-clip-text text-transparent">Entrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="usuario">Usuário</label>
             <input
@@ -48,7 +48,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              className="placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 p-2 pr-3 shadow-sm focus:outline-none focus:border-cyan-400 focus:ring-emerald-300 focus:ring-1 sm:text-sm"
               value={usuarioLogin.usuario} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -60,12 +60,12 @@ function login(e: ChangeEvent<HTMLFormElement>) {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 p-2 pr-3 shadow-sm focus:outline-none focus:border-emerald-400 focus:ring-sky-300 focus:ring-1 sm:text-sm"
               value={usuarioLogin.senha} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <button  type='submit' className="rounded text-slate-100 bg-cyan-500 hover:bg-cyan-600 text-white w-1/2 py-2 flex justify-center">
+          <button  type='submit' className="rounded bg-rainbow hover:transition duration-300 transition-transform transform hover:scale-110 text-white w-1/2 py-2 flex justify-center">
            {isLoading ? <RotatingLines
             strokeColor="white"
             strokeWidth="5"

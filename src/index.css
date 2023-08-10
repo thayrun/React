@@ -1,4 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
+
+
+/* Definindo a animação para a borda -- Testar com as cores do ARCO IRIS DEPOIS*/
+@keyframes b-blue-animation {
+
+    0% { border-color: #2db3b8; }  
+    2% { border-color: #27f7e5; }   
+    16% { border-color: #187275; } 
+    32% { border-color: #56c3f5; }  
+    48% { border-color: #67faf3; }  
+    64% { border-color: #0000FF; }  
+    80% { border-color: #b9b8ff; }  
+    100% { border-color: #4c77ec; } 
+    
+  }
+  
+  /* Aplicando a animação no button ~  */
+  button.border-animate-blue {
+    border: 2px solid; /* Define a borda */
+    border-radius: 5px; /* Define o raio da borda */
+    animation: b-blue-animation 4s linear infinite; /* Aplica a animação */
+  }
+
+
 
 
 @tailwind base;

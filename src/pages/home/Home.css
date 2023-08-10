@@ -1,0 +1,39 @@
+/* .swiper envolve todo o componente Swiper */
+.swiper {
+    width: 100%;
+    height: 300px; /* Altura fixa para o contêiner do Swiper */
+  }
+  
+/* Defina uma altura fixa para os slides */
+  .swiper-slide {
+    background-color: #b7d4ee;   /* Cor do Fundo*/
+    height: 100%; /* Altura do slide pra preencher a altura do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Ajuste o tamanho das imagens */
+  .swiper-slide img {
+    max-width: 100%; /* Largura do slide */
+    max-height: 100%; /* Altura do slide */
+    object-fit: contain; 
+    /* Escolher "contain" ou "cover" 
+    
+    
+    contain:
+    A imagem é dimensionada para caber completamente dentro do contêiner, mantendo sua proporção original.
+    A imagem não se estenderá além das bordas do contêiner, mas pode deixar espaços vazios nas laterais ou na parte superior/inferior do contêiner, dependendo da proporção da imagem e do contêiner.
+    
+    
+    cover:
+    A imagem é dimensionada para preencher completamente o contêiner, mantendo sua proporção original.
+    Isso pode resultar em partes da imagem sendo cortadas (não visíveis) se a proporção da imagem não coincidir exatamente com a do contêiner.
+    A imagem cobre todo o contêiner, sem deixar espaços vazios, mas pode ser cortada para se ajustar à proporção.;
+    
+    
+    
+    
+    */
+
+  }

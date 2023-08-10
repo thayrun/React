@@ -5,4 +5,48 @@
     width: 100%;
     background-size: cover;
     background-position: center;
+    position: fixed;
+    z-index: -1;
   }
+
+  .container-login {
+    background-color: #ffffffd3;
+    padding: 6%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px #0000001a;
+  }
+
+
+
+   /* Keyframe do Button */
+  @keyframes backgroundRainbow  {
+    0% { background-position: 0% 50%; }  /* Início do gradiente */
+    100% { background-position: 100% 50%; } /* Fim do gradiente */
+  }
+  
+  /* Animação ao Button ~ Entrar ~ */
+  button.bg-rainbow {
+    border: 2px solid transparent; /* Borda Transparente */
+    background-image: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3, #f80af8, #f83c3c); /* As cores do gradiente */
+    background-size: 1500% 100%; /* Tamanho do Gradiente */
+    animation: backgroundRainbow 5s linear infinite; 
+  }
+
+
+
+
+  /*  Animação do Titulo/Texto ~ Entrar ~ */
+  @keyframes colorTextChange {
+    0%{ color:#6fe2ff }
+    25%{ color: #2daaf3 }
+    50%{ color: #1d21f5;}
+    100%{ color: #0818ff;}
+  }
+
+  /* Animação no Texto */
+  .animated-text-color {
+    animation: colorTextChange 3s linear infinite;
+  }
+
+
+  
